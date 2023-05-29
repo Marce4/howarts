@@ -1,0 +1,27 @@
+<h1>Pages#new</h1>
+<p>Find me in app/views/pages/new.html.erb</p>
+
+<h1>HOWARTS</h1>
+<p>agregar nuevo registro</p>
+
+<%= form_with model: @character, method: :post do |form| %>
+
+    <div>
+        <%= form.label :name, "Nombre" %>
+        <%= form.text_field :name %>
+    </div></br>
+
+    <div>
+        <%= form.label :location, "Ubicación" %>
+        <%= form.text_field :location %>
+    </div></br>
+
+    <div>
+        <%= form.label :house, "Casa" %>
+        <%= form.text_field :house %>
+    </div></br>
+
+    <div>
+        <%= form.submit "Guardar" %>
+    </div>
+<% end %>
