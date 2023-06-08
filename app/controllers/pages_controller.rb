@@ -1,23 +1,28 @@
 class PagesController < ApplicationController
 
   def index
-      @character = Character.all
+      @characters = Character.all
   end
 
 
   def create
-
+    @personaje = personaje.new(params.require(:personaje).permiso(:nombre, :ubicacion, :casa))
+    if @personaje.guardar
+      redirect_to '/pages/index'
+    @character = Character.new(params.require(:character).permit(:name, :location, :house))
+    if @character.save
+      redirect_to '/pages/index'
+    else
+      render :new      
+    end
   end
 
 
   def new
-      @character = Character.new(params.permit(:name, :location, :house))
-      if @character.save
-        redirect_to '/pages/create'
-      else
-        render :new      
-      end
+    @character = Character.new
   end
 
 
 end
+
+

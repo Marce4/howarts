@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/create'
-  get 'pages/new'
+  get 'pages/new', as: 'chararters'
     
   #Rutas get
 
   #Rutas post
-  post 'pages', to: 'pages#new'
+  post 'pages/new', to: 'pages#create'
 
 
 

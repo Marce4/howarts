@@ -1,9 +1,9 @@
 class CreateCharacters < ActiveRecord::Migration[7.0]
   def change
     create_table :characters do |t|
-      t.string :name
-      t.string :location
-      t.string :house
+      t.string :name, null: false
+      t.string :location, null: false
+      t.string :house, null: false
 
       t.timestamps
     end
