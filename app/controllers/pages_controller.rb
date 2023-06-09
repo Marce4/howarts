@@ -1,28 +1,21 @@
 class PagesController < ApplicationController
 
   def index
-      @characters = Character.all
-  end
-
-
-  def create
-    @personaje = personaje.new(params.require(:personaje).permiso(:nombre, :ubicacion, :casa))
-    if @personaje.guardar
-      redirect_to '/pages/index'
-      @character = Character.new(params.require(:character).permit(:name, :location, :house))
-      if @character.save
-        redirect_to '/pages/index'
-        else
-        render :new      
-      end
-    end
+    @characters = Character.all
   end
 
   def new
     @character = Character.new
   end
 
-
+  def create
+    @character = Character.new(params.require(:character).permit(:name, :location, :house))
+    
+    if @character.save
+      redirect_to '/pages/index', notice: 'El registro se ha ingresado correctamente'
+      else
+        render :new, alert: 'Error, por favor intente nuevamente'      
+    end
+  end
+  
 end
-
-
