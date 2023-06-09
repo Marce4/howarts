@@ -88,3 +88,4 @@ production:
   database: howarts_rails_production
   username: howarts_rails
   password: <%= ENV["HOWARTS_RAILS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
