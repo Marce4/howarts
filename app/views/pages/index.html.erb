@@ -2,11 +2,12 @@
 <p>Find me in app/views/pages/index.html.erb</p>
 
 <% @characters.each do |character| %>
-    <div class="char" style="border:1px;">
-        <%= character.name %></br>
-        <%= character.location %></br>
-        <%= character.house %></br>
+    <div class="char" style="border:5px;">
+        <%= 'Nombre: ' + character.name %></br>
+        <%= 'Ubicación: ' + character.location %></br>
+        <%= 'Casa: ' + character.house %></br>
+        <%= '--------------------------------------------'%>
     </div>
 <% end %>
 
-<p>Parq agregar un registro presione <a href="/app/views/pages/new">AQUI</a></p>
+<p>Para agregar un registro presione <a href="pages/new">AQUI</a></p>
